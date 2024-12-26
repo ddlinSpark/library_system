@@ -14,6 +14,13 @@
  Date: 26/12/2024 13:03:54
 */
 
+-- ----------------------------
+-- This section is reserved for future SQL commands or comments.
+-- ----------------------------
+DROP DATABASE IF EXISTS library;
+CREATE DATABASE IF NOT EXISTS library CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE library;
+
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 

@@ -1,4 +1,4 @@
-# 图书管理系统
+# 图书管理系统 (library_system)
 
 ## 项目概述
 
@@ -22,14 +22,27 @@
 1. 克隆仓库到本地：
 
    ```shell
-   git clone https://github.com/your-username/book-management-system.git
-   cd book-management-system
+   git clone https://github.com/your-username/library_system.git
+   cd library_system
    ```
 
 2. 安装依赖
 
+   在安装依赖之前，请确保你已经安装了 Python 3.x 和 pip。你可以通过以下命令检查 Python 和 pip 的版本：
+
    ```shell
-   pip install -r requirements.txt
+   python --version
+   pip --version
+   ```
+
+   如果没有安装 Python，请访问 [Python 官网](https://www.python.org/downloads/) 下载并安装。
+
+   然后，使用以下命令安装项目所需的依赖：
+
+   ```shell
+   pip install Flask==2.0.3
+   pip install Flask-MySQLdb==1.0.0
+   pip install mysql-connector-python==8.0.28
    ```
 
 3. 运行程序
@@ -37,6 +50,8 @@
    ```shell
    python run.py
    ```
+
+   确保在运行程序之前，数据库已正确配置并初始化（请参考 `library.sql` 文件以获取数据库结构和初始数据）。
 
 ## 使用说明
 
@@ -66,28 +81,44 @@
 如有任何问题或建议，请联系开发团队：
 
 - **开发团队**：林华东、黄鸿乐、韦嘉豪
-- **邮箱**：3380845753@qq.com
+- **邮箱**：team@example.com
 
 ## 项目结构
 
 ```
-book-management-system/
-│
-├── views/                  # 存放视图相关的文件
-│   ├── main.py            # 主窗口
-│   ├── login.py           # 登录窗口
-│   ├── register.py        # 注册窗口
-│   ├── pages/             # 各个功能页面
-│   └── dialogs/           # 弹出对话框
+library_system/
 │
 ├── models/                 # 存放数据模型
 │   ├── book.py            # 书籍管理
-│   ├── user.py            # 用户管理
-│   └── borrow.py          # 借阅管理
+│   ├── borrow.py          # 借阅管理
+│   ├── database.py        # 数据库连接管理
+│   └── user.py            # 用户管理
 │
-├── run.py                 # 启动程序
-├── requirements.txt       # 项目依赖
-└── README.md              # 项目说明文档
+├── views/                  # 存放视图相关的文件
+│   ├── login.py           # 登录窗口
+│   ├── main.py            # 主窗口
+│   ├── register.py        # 注册窗口
+│   ├── __init__.py        # 标记为Python包
+│   │
+│   ├── dialogs/           # 弹出对话框
+│   │   ├── book_edit.py     # 编辑书籍对话框
+│   │   ├── user_edit.py     # 编辑用户对话框
+│   │   └── __pycache__      # 编译缓存文件
+│   │
+│   └── pages/             # 各个功能页面
+│       ├── about.py          # 关于页面
+│       ├── book_manage.py     # 书籍管理页面
+│       ├── book_search.py      # 书籍搜索页面
+│       ├── borrow_manage.py     # 借阅管理页面
+│       ├── home.py           # 首页
+│       ├── my_borrows.py     # 我的借阅记录页面
+│       ├── profile.py        # 用户个人资料页面
+│       └── user_manage.py    # 用户管理页面
+│
+├── library.sql             # 数据库初始化脚本
+├── README.md                # 项目说明文档
+├── run.cmd                 # 启动脚本
+└── run.py                  # 启动程序
 ```
 
 ## 未来计划
@@ -96,5 +127,16 @@ book-management-system/
 - 提供用户反馈和评价系统。
 - 实现数据导出功能，支持导出借阅记录和书籍信息。
 - 增强用户界面，提升用户体验。
+
+## 常见问题
+
+- **如何重置密码？**  
+  用户可以通过注册页面的“忘记密码”链接重置密码。
+
+- **如何联系支持团队？**  
+  请通过上面的联系方式与开发团队联系。
+
+- **是否支持多语言？**  
+  目前系统仅支持中文，未来计划增加其他语言支持。
 
 
