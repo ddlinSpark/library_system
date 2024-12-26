@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/python期末大项目.iml" filepath="$PROJECT_DIR$/.idea/python期末大项目.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/library_system.iml" filepath="$PROJECT_DIR$/.idea/library_system.iml" />
     </modules>
   </component>
 </project>
